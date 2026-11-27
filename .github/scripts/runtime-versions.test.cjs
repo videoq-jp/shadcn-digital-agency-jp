@@ -29,14 +29,19 @@ test("npm discovery preserves reviewed hashes and rejects spoofed distribution U
       tarball: `https://registry.npmjs.org/npm/-/npm-${next}.tgz`,
       integrity: data.tool_downloads.npm.integrity,
     }
-  const query = async () => ({
-    versions: { [next]: { dist: pin }, "13.0.0-beta.1": {} },
-  })
-  const found = await runtime.discover(data, "npm", false, query)
+  const queried = []
+  const query = async (url) => {
+    queried.push(url)
+    return { version: next, dist: pin }
+  }
+  const found = await runtime.discover(data, "npm", false, query, { npm: next })
   assert.equal(found.npm, next)
   assert.equal(found.tool_downloads.npm.url, pin.tarball)
+  assert.deepEqual(queried, [`https://registry.npmjs.org/npm/${next}`])
   pin.tarball = "https://evil.test/npm.tgz"
-  await assert.rejects(runtime.discover(data, "npm", false, query))
+  await assert.rejects(
+    runtime.discover(data, "npm", false, query, { npm: next })
+  )
   assert.equal(data.npm, original)
 })
 test("manifest rejects unsupported runtimes and generates only project pins", () => {
@@ -151,4 +156,33 @@ test("workflows execute Node scripts and configure only Node.js and npm runtimes
     /options: \[all, node, npm\]/
   )
   assert.ok(!fs.existsSync(path.join(__dirname, "../../.python-version")))
+})
+
+test("Dependabot tool pins preserve release channels without searching registry versions", async () => {
+  const current = structuredClone(data)
+  current.npm = "12.2.0"
+  current.tool_downloads.npm.url =
+    "https://registry.npmjs.org/npm/-/npm-12.2.0.tgz"
+  const noQuery = async () => {
+    throw Error("unexpected registry discovery")
+  }
+  for (const pin of ["12.2.0", "11.9.0", "13.0.0"])
+    assert.deepEqual(
+      await runtime.discover(current, "npm", false, noQuery, { npm: pin }),
+      current
+    )
+  await assert.rejects(
+    runtime.discover(current, "npm", false, noQuery, { npm: "^12" })
+  )
+  await assert.rejects(
+    runtime.discover(
+      current,
+      "npm",
+      false,
+      async () => ({ version: "12.2.99", dist: {} }),
+      { npm: "12.2.1" }
+    ),
+    /mismatched/
+  )
+  assert.match(runtime.declaredTools().npm, /^\d+\.\d+\.\d+$/)
 })
