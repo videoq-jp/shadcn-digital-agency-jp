@@ -1,0 +1,38 @@
+{
+  "reference": {
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "heading": {
+      "x": 404,
+      "y": 336.046875,
+      "height": 34.546875,
+      "font": "600 32px / 34.56px Geist, \"Geist Fallback\""
+    },
+    "composer": {
+      "x": 388,
+      "y": 593.09375,
+      "width": 664,
+      "height": 106
+    }
+  },
+  "local": {
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "heading": {
+      "x": 404,
+      "y": 335.46875,
+      "height": 34.546875,
+      "font": "600 32px / 34.56px \"Playground Geist\", -apple-system, \"system-ui\", \"Noto Sans JP\", sans-serif"
+    },
+    "composer": {
+      "x": 388,
+      "y": 592.515625,
+      "width": 664,
+      "height": 106
+    }
+  }
+}

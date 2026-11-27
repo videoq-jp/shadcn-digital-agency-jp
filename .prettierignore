@@ -4,3 +4,6 @@ registry.json
 package-lock.json
 src/styles/digital-agency.css
 src/styles/digital-agency.tokens.json
+
+worker/env.d.ts
+.wrangler

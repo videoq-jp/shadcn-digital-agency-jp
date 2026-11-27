@@ -606,6 +606,9 @@ export default function App() {
             </p>
           </div>
           <div className="flex w-full flex-wrap items-center gap-2 md:w-auto md:justify-end">
+            <Button asChild variant="outline" size="sm">
+              <a href="/a2ui">A2UIデモ</a>
+            </Button>
             <Button
               variant="text"
               size="sm"

@@ -7,6 +7,8 @@ export default tseslint.config(
   {
     ignores: [
       "node_modules",
+      "worker/env.d.ts",
+      ".wrangler",
       ".claude",
       "upstream",
       "dist",

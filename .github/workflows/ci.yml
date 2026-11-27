@@ -75,8 +75,8 @@ jobs:
       - name: Typecheck
         run: npm run typecheck
 
-      - name: Demo build
-        run: npm run demo:build
+      - name: Worker bundle and static assets
+        run: npm run deploy:check
 
       - name: Unit + a11y tests
         run: npm test
@@ -95,6 +95,9 @@ jobs:
 
       - name: Theme is up to date
         run: npm run check:theme
+
+      - name: A2UI catalog is up to date
+        run: npm run a2ui:check
 
       - name: Registry is up to date
         run: npm run registry:test

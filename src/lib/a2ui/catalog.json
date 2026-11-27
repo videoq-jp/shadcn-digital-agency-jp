@@ -1,0 +1,1026 @@
+{
+  "protocolVersion": "1.0",
+  "catalogId": "https://github.com/videoq-jp/shadcn-digital-agency-jp/catalogs/a2ui/v1",
+  "instructions": "Unofficial Digital Agency inspired components. Use Column as root. Column and Text are A2UI layout/text primitives. Other components adapt existing repository UI components without additional visual widgets. Use Table and DescriptionList for numeric data. Give every input a descriptive label. Bind editable values with @path. Use plain text; HTML and JavaScript are not supported.",
+  "components": {
+    "Column": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "Column" },
+        "children": { "$ref": "common_types.json#/$defs/ChildList" }
+      },
+      "required": ["component", "children"]
+    },
+    "Text": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "Text" },
+        "text": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        }
+      },
+      "required": ["component", "text"]
+    },
+    "Heading": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "Heading" },
+        "text": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "level": {
+          "type": "string",
+          "enum": ["h2", "h3", "h4", "h5", "h6"],
+          "default": "h2"
+        }
+      },
+      "required": ["component", "text"]
+    },
+    "Input": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "Input" },
+        "label": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "value": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "required": { "type": "boolean" },
+        "disabled": {
+          "$ref": "common_types.json#/$defs/DynamicBoolean",
+          "description": "A boolean value that can be a literal, a path, or a function call returning a boolean or a validation result object (coerced to its 'valid' boolean)."
+        }
+      },
+      "required": ["component", "label", "value"]
+    },
+    "Textarea": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "Textarea" },
+        "label": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "value": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "required": { "type": "boolean" },
+        "disabled": {
+          "$ref": "common_types.json#/$defs/DynamicBoolean",
+          "description": "A boolean value that can be a literal, a path, or a function call returning a boolean or a validation result object (coerced to its 'valid' boolean)."
+        }
+      },
+      "required": ["component", "label", "value"]
+    },
+    "Checkbox": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "Checkbox" },
+        "label": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "value": {
+          "$ref": "common_types.json#/$defs/DynamicBoolean",
+          "description": "A boolean value that can be a literal, a path, or a function call returning a boolean or a validation result object (coerced to its 'valid' boolean)."
+        },
+        "disabled": {
+          "$ref": "common_types.json#/$defs/DynamicBoolean",
+          "description": "A boolean value that can be a literal, a path, or a function call returning a boolean or a validation result object (coerced to its 'valid' boolean)."
+        }
+      },
+      "required": ["component", "label", "value"]
+    },
+    "Button": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "Button" },
+        "label": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "variant": {
+          "type": "string",
+          "enum": ["solid", "outline", "text"],
+          "default": "solid"
+        },
+        "disabled": {
+          "$ref": "common_types.json#/$defs/DynamicBoolean",
+          "description": "A boolean value that can be a literal, a path, or a function call returning a boolean or a validation result object (coerced to its 'valid' boolean)."
+        },
+        "action": {
+          "$ref": "common_types.json#/$defs/Action",
+          "description": "Defines an interaction handler that can either trigger an agent-side event or execute a local renderer-side function."
+        }
+      },
+      "required": ["component", "label", "action"]
+    },
+    "Divider": {
+      "type": "object",
+      "properties": { "component": { "const": "Divider" } },
+      "required": ["component"]
+    },
+    "Table": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "Table" },
+        "caption": { "type": "string" },
+        "columns": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1,
+          "maxItems": 8
+        },
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": { "type": "string" },
+            "maxItems": 8
+          },
+          "maxItems": 100
+        }
+      },
+      "required": ["component", "caption", "columns", "rows"]
+    },
+    "DescriptionList": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "DescriptionList" },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "term": { "type": "string" },
+              "description": { "type": "string" }
+            },
+            "required": ["term", "description"],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 30
+        }
+      },
+      "required": ["component", "items"]
+    },
+    "Select": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "Select" },
+        "label": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "value": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "disabled": {
+          "$ref": "common_types.json#/$defs/DynamicBoolean",
+          "description": "A boolean value that can be a literal, a path, or a function call returning a boolean or a validation result object (coerced to its 'valid' boolean)."
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": { "type": "string" },
+              "value": { "type": "string", "minLength": 1 }
+            },
+            "required": ["label", "value"],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 30
+        }
+      },
+      "required": ["component", "label", "value", "options"]
+    },
+    "Blockquote": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "Blockquote" },
+        "text": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        }
+      },
+      "required": ["component", "text"]
+    },
+    "ErrorText": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "ErrorText" },
+        "text": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        }
+      },
+      "required": ["component", "text"]
+    },
+    "SupportText": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "SupportText" },
+        "text": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        }
+      },
+      "required": ["component", "text"]
+    },
+    "StatusBadge": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "StatusBadge" },
+        "text": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        }
+      },
+      "required": ["component", "text"]
+    },
+    "ChipLabel": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "ChipLabel" },
+        "text": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        }
+      },
+      "required": ["component", "text"]
+    },
+    "RequirementBadge": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "RequirementBadge" },
+        "text": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "optional": { "type": "boolean", "default": false }
+      },
+      "required": ["component", "text"]
+    },
+    "Label": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "Label" },
+        "text": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        }
+      },
+      "required": ["component", "text"]
+    },
+    "Legend": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "Legend" },
+        "text": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "children": {
+          "$ref": "common_types.json#/$defs/ChildList",
+          "default": []
+        }
+      },
+      "required": ["component", "text"]
+    },
+    "FormControlLabel": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "FormControlLabel" },
+        "label": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "children": {
+          "$ref": "common_types.json#/$defs/ChildList",
+          "default": []
+        }
+      },
+      "required": ["component", "label"]
+    },
+    "Link": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "Link" },
+        "text": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "href": { "type": "string" },
+        "newTab": { "type": "boolean", "default": false }
+      },
+      "required": ["component", "text", "href"]
+    },
+    "UtilityLink": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "UtilityLink" },
+        "text": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "href": { "type": "string" },
+        "newTab": { "type": "boolean", "default": false }
+      },
+      "required": ["component", "text", "href"]
+    },
+    "List": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "List" },
+        "items": {
+          "type": "array",
+          "items": { "type": "string" },
+          "maxItems": 100
+        },
+        "numbered": { "type": "boolean", "default": false }
+      },
+      "required": ["component", "items"]
+    },
+    "Image": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "Image" },
+        "src": { "type": "string" },
+        "alt": { "type": "string" },
+        "caption": { "type": "string" }
+      },
+      "required": ["component", "src", "alt"]
+    },
+    "EmergencyBanner": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "EmergencyBanner" },
+        "title": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "text": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "children": {
+          "$ref": "common_types.json#/$defs/ChildList",
+          "default": []
+        }
+      },
+      "required": ["component", "title", "text"]
+    },
+    "NotificationBanner": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "NotificationBanner" },
+        "title": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "text": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["info1", "info2", "warning", "error", "success"],
+          "default": "info1"
+        },
+        "visible": {
+          "$ref": "common_types.json#/$defs/DynamicBoolean",
+          "description": "A boolean value that can be a literal, a path, or a function call returning a boolean or a validation result object (coerced to its 'valid' boolean)."
+        },
+        "children": {
+          "$ref": "common_types.json#/$defs/ChildList",
+          "default": []
+        }
+      },
+      "required": ["component", "title", "text", "visible"]
+    },
+    "ProgressIndicator": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "ProgressIndicator" },
+        "label": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "value": { "type": "number", "minimum": 0, "maximum": 100 }
+      },
+      "required": ["component", "label"]
+    },
+    "Calendar": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "Calendar" },
+        "label": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "value": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "disabled": {
+          "$ref": "common_types.json#/$defs/DynamicBoolean",
+          "description": "A boolean value that can be a literal, a path, or a function call returning a boolean or a validation result object (coerced to its 'valid' boolean)."
+        },
+        "min": { "type": "string" },
+        "max": { "type": "string" }
+      },
+      "required": ["component", "label", "value"]
+    },
+    "DatePicker": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "DatePicker" },
+        "label": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "value": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "disabled": {
+          "$ref": "common_types.json#/$defs/DynamicBoolean",
+          "description": "A boolean value that can be a literal, a path, or a function call returning a boolean or a validation result object (coerced to its 'valid' boolean)."
+        },
+        "min": { "type": "string" },
+        "max": { "type": "string" }
+      },
+      "required": ["component", "label", "value"]
+    },
+    "SeparatedDatePicker": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "SeparatedDatePicker" },
+        "label": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "value": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "disabled": {
+          "$ref": "common_types.json#/$defs/DynamicBoolean",
+          "description": "A boolean value that can be a literal, a path, or a function call returning a boolean or a validation result object (coerced to its 'valid' boolean)."
+        },
+        "min": { "type": "string" },
+        "max": { "type": "string" }
+      },
+      "required": ["component", "label", "value"]
+    },
+    "RadioGroup": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "RadioGroup" },
+        "label": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "value": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "disabled": {
+          "$ref": "common_types.json#/$defs/DynamicBoolean",
+          "description": "A boolean value that can be a literal, a path, or a function call returning a boolean or a validation result object (coerced to its 'valid' boolean)."
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": { "type": "string" },
+              "value": { "type": "string", "minLength": 1 }
+            },
+            "required": ["label", "value"],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 30
+        }
+      },
+      "required": ["component", "label", "value", "options"]
+    },
+    "Switch": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "Switch" },
+        "label": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "value": {
+          "$ref": "common_types.json#/$defs/DynamicBoolean",
+          "description": "A boolean value that can be a literal, a path, or a function call returning a boolean or a validation result object (coerced to its 'valid' boolean)."
+        },
+        "disabled": {
+          "$ref": "common_types.json#/$defs/DynamicBoolean",
+          "description": "A boolean value that can be a literal, a path, or a function call returning a boolean or a validation result object (coerced to its 'valid' boolean)."
+        }
+      },
+      "required": ["component", "label", "value"]
+    },
+    "SearchBox": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "SearchBox" },
+        "label": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "value": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "action": {
+          "$ref": "common_types.json#/$defs/Action",
+          "description": "Defines an interaction handler that can either trigger an agent-side event or execute a local renderer-side function."
+        },
+        "disabled": {
+          "$ref": "common_types.json#/$defs/DynamicBoolean",
+          "description": "A boolean value that can be a literal, a path, or a function call returning a boolean or a validation result object (coerced to its 'valid' boolean)."
+        }
+      },
+      "required": ["component", "label", "value", "action"]
+    },
+    "HamburgerMenuButton": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "HamburgerMenuButton" },
+        "label": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "value": {
+          "$ref": "common_types.json#/$defs/DynamicBoolean",
+          "description": "A boolean value that can be a literal, a path, or a function call returning a boolean or a validation result object (coerced to its 'valid' boolean)."
+        },
+        "disabled": {
+          "$ref": "common_types.json#/$defs/DynamicBoolean",
+          "description": "A boolean value that can be a literal, a path, or a function call returning a boolean or a validation result object (coerced to its 'valid' boolean)."
+        },
+        "children": {
+          "type": "array",
+          "items": { "type": "string" },
+          "default": []
+        }
+      },
+      "required": ["component", "label", "value"]
+    },
+    "FileUpload": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "FileUpload" },
+        "label": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "value": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "disabled": {
+          "$ref": "common_types.json#/$defs/DynamicBoolean",
+          "description": "A boolean value that can be a literal, a path, or a function call returning a boolean or a validation result object (coerced to its 'valid' boolean)."
+        },
+        "accept": { "type": "string" },
+        "multiple": { "type": "boolean", "default": false }
+      },
+      "required": ["component", "label", "value"]
+    },
+    "Accordion": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "Accordion" },
+        "title": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "value": {
+          "$ref": "common_types.json#/$defs/DynamicBoolean",
+          "description": "A boolean value that can be a literal, a path, or a function call returning a boolean or a validation result object (coerced to its 'valid' boolean)."
+        },
+        "children": {
+          "$ref": "common_types.json#/$defs/ChildList",
+          "default": []
+        }
+      },
+      "required": ["component", "title", "value"]
+    },
+    "Disclosure": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "Disclosure" },
+        "title": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "value": {
+          "$ref": "common_types.json#/$defs/DynamicBoolean",
+          "description": "A boolean value that can be a literal, a path, or a function call returning a boolean or a validation result object (coerced to its 'valid' boolean)."
+        },
+        "children": {
+          "$ref": "common_types.json#/$defs/ChildList",
+          "default": []
+        }
+      },
+      "required": ["component", "title", "value"]
+    },
+    "Dialog": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "Dialog" },
+        "title": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "value": {
+          "$ref": "common_types.json#/$defs/DynamicBoolean",
+          "description": "A boolean value that can be a literal, a path, or a function call returning a boolean or a validation result object (coerced to its 'valid' boolean)."
+        },
+        "children": {
+          "$ref": "common_types.json#/$defs/ChildList",
+          "default": []
+        }
+      },
+      "required": ["component", "title", "value"]
+    },
+    "Drawer": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "Drawer" },
+        "title": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "value": {
+          "$ref": "common_types.json#/$defs/DynamicBoolean",
+          "description": "A boolean value that can be a literal, a path, or a function call returning a boolean or a validation result object (coerced to its 'valid' boolean)."
+        },
+        "children": {
+          "$ref": "common_types.json#/$defs/ChildList",
+          "default": []
+        },
+        "side": {
+          "type": "string",
+          "enum": ["left", "right", "full"],
+          "default": "right"
+        }
+      },
+      "required": ["component", "title", "value"]
+    },
+    "Tabs": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "Tabs" },
+        "label": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "value": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "tabs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": { "type": "string" },
+              "value": { "type": "string" },
+              "children": {
+                "$ref": "common_types.json#/$defs/ChildList",
+                "default": []
+              }
+            },
+            "required": ["label", "value"],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 12
+        }
+      },
+      "required": ["component", "label", "value", "tabs"]
+    },
+    "Breadcrumbs": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "Breadcrumbs" },
+        "label": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": { "type": "string" },
+              "href": { "type": "string" }
+            },
+            "required": ["label", "href"],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 20
+        }
+      },
+      "required": ["component", "label", "items"]
+    },
+    "HorizontalMenu": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "HorizontalMenu" },
+        "label": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "value": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": { "type": "string" },
+              "value": { "type": "string", "minLength": 1 }
+            },
+            "required": ["label", "value"],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 30
+        }
+      },
+      "required": ["component", "label", "value", "options"]
+    },
+    "MenuList": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "MenuList" },
+        "label": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "value": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": { "type": "string" },
+              "value": { "type": "string", "minLength": 1 }
+            },
+            "required": ["label", "value"],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 30
+        }
+      },
+      "required": ["component", "label", "value", "options"]
+    },
+    "MenuListBox": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "MenuListBox" },
+        "label": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "value": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": { "type": "string" },
+              "value": { "type": "string", "minLength": 1 }
+            },
+            "required": ["label", "value"],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 30
+        }
+      },
+      "required": ["component", "label", "value", "options"]
+    },
+    "LanguageSelector": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "LanguageSelector" },
+        "label": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "value": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": { "type": "string" },
+              "value": { "type": "string", "minLength": 1 }
+            },
+            "required": ["label", "value"],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 30
+        }
+      },
+      "required": ["component", "label", "value", "options"]
+    },
+    "PageNavigation": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "PageNavigation" },
+        "label": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "value": {
+          "$ref": "common_types.json#/$defs/DynamicNumber",
+          "description": "Represents a value that can be either a literal number, a path to a number in the data model, or a function call returning a number."
+        },
+        "total": { "type": "integer", "minimum": 1, "maximum": 10000 }
+      },
+      "required": ["component", "label", "value", "total"]
+    },
+    "ResourceList": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "ResourceList" },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": { "type": "string" },
+              "description": { "type": "string" },
+              "href": { "type": "string" }
+            },
+            "required": ["title", "description", "href"],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 40
+        },
+        "variant": {
+          "type": "string",
+          "enum": ["list", "frame"],
+          "default": "list"
+        }
+      },
+      "required": ["component", "items"]
+    },
+    "StepNavigation": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "StepNavigation" },
+        "label": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "value": {
+          "$ref": "common_types.json#/$defs/DynamicNumber",
+          "description": "Represents a value that can be either a literal number, a path to a number in the data model, or a function call returning a number."
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": { "type": "string" },
+              "description": { "type": "string" }
+            },
+            "required": ["title", "description"],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 20
+        },
+        "orientation": {
+          "type": "string",
+          "enum": ["horizontal", "vertical"],
+          "default": "horizontal"
+        }
+      },
+      "required": ["component", "label", "value", "steps"]
+    },
+    "Carousel": {
+      "type": "object",
+      "properties": {
+        "component": { "const": "Carousel" },
+        "label": {
+          "$ref": "common_types.json#/$defs/DynamicString",
+          "description": "Represents a string"
+        },
+        "value": {
+          "$ref": "common_types.json#/$defs/DynamicNumber",
+          "description": "Represents a value that can be either a literal number, a path to a number in the data model, or a function call returning a number."
+        },
+        "slides": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": { "type": "string" },
+              "src": { "type": "string" },
+              "alt": { "type": "string" },
+              "href": { "type": "string" }
+            },
+            "required": ["label", "src", "alt"],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 12
+        }
+      },
+      "required": ["component", "label", "value", "slides"]
+    }
+  },
+  "$defs": {
+    "anyComponent": {
+      "oneOf": [
+        { "$ref": "#/components/Column" },
+        { "$ref": "#/components/Text" },
+        { "$ref": "#/components/Heading" },
+        { "$ref": "#/components/Input" },
+        { "$ref": "#/components/Textarea" },
+        { "$ref": "#/components/Checkbox" },
+        { "$ref": "#/components/Button" },
+        { "$ref": "#/components/Divider" },
+        { "$ref": "#/components/Table" },
+        { "$ref": "#/components/DescriptionList" },
+        { "$ref": "#/components/Select" },
+        { "$ref": "#/components/Blockquote" },
+        { "$ref": "#/components/ErrorText" },
+        { "$ref": "#/components/SupportText" },
+        { "$ref": "#/components/StatusBadge" },
+        { "$ref": "#/components/ChipLabel" },
+        { "$ref": "#/components/RequirementBadge" },
+        { "$ref": "#/components/Label" },
+        { "$ref": "#/components/Legend" },
+        { "$ref": "#/components/FormControlLabel" },
+        { "$ref": "#/components/Link" },
+        { "$ref": "#/components/UtilityLink" },
+        { "$ref": "#/components/List" },
+        { "$ref": "#/components/Image" },
+        { "$ref": "#/components/EmergencyBanner" },
+        { "$ref": "#/components/NotificationBanner" },
+        { "$ref": "#/components/ProgressIndicator" },
+        { "$ref": "#/components/Calendar" },
+        { "$ref": "#/components/DatePicker" },
+        { "$ref": "#/components/SeparatedDatePicker" },
+        { "$ref": "#/components/RadioGroup" },
+        { "$ref": "#/components/Switch" },
+        { "$ref": "#/components/SearchBox" },
+        { "$ref": "#/components/HamburgerMenuButton" },
+        { "$ref": "#/components/FileUpload" },
+        { "$ref": "#/components/Accordion" },
+        { "$ref": "#/components/Disclosure" },
+        { "$ref": "#/components/Dialog" },
+        { "$ref": "#/components/Drawer" },
+        { "$ref": "#/components/Tabs" },
+        { "$ref": "#/components/Breadcrumbs" },
+        { "$ref": "#/components/HorizontalMenu" },
+        { "$ref": "#/components/MenuList" },
+        { "$ref": "#/components/MenuListBox" },
+        { "$ref": "#/components/LanguageSelector" },
+        { "$ref": "#/components/PageNavigation" },
+        { "$ref": "#/components/ResourceList" },
+        { "$ref": "#/components/StepNavigation" },
+        { "$ref": "#/components/Carousel" }
+      ],
+      "discriminator": { "propertyName": "component" }
+    },
+    "anyFunction": { "not": {} }
+  }
+}
