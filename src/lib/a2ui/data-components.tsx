@@ -1,7 +1,7 @@
 import { createComponentImplementation } from "@a2ui/react"
 import { DynamicBooleanSchema, DynamicStringSchema } from "@a2ui/web_core/v1_0"
 import { Fragment, useId } from "react"
-import { z } from "zod"
+import { z } from "zod/v3"
 import { Label } from "@/components/ui/label"
 import { Dl, Dt, Dd } from "@/components/ui/description-list"
 import {

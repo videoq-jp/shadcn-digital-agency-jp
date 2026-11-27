@@ -3,7 +3,7 @@ import { DynamicStringSchema, DynamicBooleanSchema } from "@a2ui/web_core/v1_0"
 import { parseDate } from "@internationalized/date"
 import { I18nProvider } from "react-aria-components"
 import { useId, useState } from "react"
-import { z } from "zod"
+import { z } from "zod/v3"
 import {
   Calendar,
   CalendarButton,

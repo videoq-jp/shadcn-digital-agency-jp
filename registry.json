@@ -12,7 +12,7 @@
       "dependencies": [
         "@a2ui/react@0.16.1",
         "@a2ui/web_core@0.16.1",
-        "zod@^3.25.76",
+        "zod@4.6.7",
         "@internationalized/date@^3.12.4"
       ],
       "registryDependencies": [
@@ -141,6 +141,11 @@
           "path": "THIRD_PARTY_LICENSES.md",
           "type": "registry:file",
           "target": "~/THIRD_PARTY_LICENSES.md"
+        },
+        {
+          "path": "scripts/prepare-a2ui-zod.cjs",
+          "type": "registry:file",
+          "target": "~/scripts/prepare-a2ui-zod.cjs"
         }
       ]
     },

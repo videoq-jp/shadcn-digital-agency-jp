@@ -1,4 +1,4 @@
-import { z } from "zod"
+import { z } from "zod/v3"
 import catalogDocument from "../../src/lib/a2ui/catalog.json"
 
 import {

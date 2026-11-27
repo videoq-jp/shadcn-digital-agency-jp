@@ -5,7 +5,7 @@ import {
   DynamicBooleanSchema,
 } from "@a2ui/web_core/v1_0"
 import { useId } from "react"
-import { z } from "zod"
+import { z } from "zod/v3"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { SwitchOnOff } from "@/components/ui/switch"
 import { Label } from "@/components/ui/label"

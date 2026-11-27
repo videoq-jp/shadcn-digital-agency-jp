@@ -1,6 +1,6 @@
 import { ChildListSchema, DynamicStringSchema } from "@a2ui/web_core/v1_0"
 import { Fragment, type ReactNode } from "react"
-import { z } from "zod"
+import { z } from "zod/v3"
 
 export const textSchema = z.object({ text: DynamicStringSchema })
 export const childrenSchema = ChildListSchema.default([])

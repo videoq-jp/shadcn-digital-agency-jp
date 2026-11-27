@@ -198,3 +198,11 @@ JSONはSDKの`Catalog.toJson()`から生成し、テストでReact側定義と�
 - FileUploadは選択・削除が可能です。`value`は`"[]"`で初期化し、選択したファイルの`name`・`size`・`type`だけをJSON文字列として保存します。ファイル内容のアップロード先はありません。
 - SearchBoxとButtonはeventアクションを実行します。他の操作はローカルで値を更新し、次回のボタン操作や追加依頼時に現在値をLLMへ送ります。実際の予約・申込・決済は行いません。
 - Link / UtilityLinkと画像・リソースのURLは実行可能なスキームを描画しません。HTML・JavaScript・任意のReactコードは生成・実行しません。
+
+## Zodの互換性と依存関係検査
+
+A2UI SDK 0.16.1はZod 3 APIを前提とするため、Zod 4.6.7の公式`zod/v3`互換APIを使用します。`scripts/prepare-a2ui-zod.cjs`はSDKのimport先をこのAPIに揃え、互換実装の配列・Setが上限超過時に要素の検証を続けないように修正します。ESM/CJS双方の過大コレクション拒否をテストしています。脆弱性の無視やCIの除外は行いません。
+
+通常の`npm install` / `npm ci`ではpostinstallで適用します。`--ignore-scripts`を使う環境では、続けて`npm run prepare:dependencies`を実行してください。SDKまたはZodのバージョンが変わると、互換処理は再レビューが必要なことを示して停止します。
+
+レジストリで別プロジェクトへ導入する場合も、配布される`scripts/prepare-a2ui-zod.cjs`を使い、ルートの`zod`を`4.6.7`、`overrides.zod`を`$zod`に指定してからインストールしてください。インストール後に`node scripts/prepare-a2ui-zod.cjs`を実行し、以後の依存関係再インストール時にも実行するよう設定してください。既存のpostinstallがある場合はその処理を保って追加します。

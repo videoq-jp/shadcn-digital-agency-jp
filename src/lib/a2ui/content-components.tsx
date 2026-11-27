@@ -1,6 +1,6 @@
 import { createComponentImplementation as define } from "@a2ui/react"
 import { DynamicStringSchema, DynamicBooleanSchema } from "@a2ui/web_core/v1_0"
-import { z } from "zod"
+import { z } from "zod/v3"
 import { useId } from "react"
 import { Blockquote } from "@/components/ui/blockquote"
 import { ChipLabel } from "@/components/ui/chip-label"

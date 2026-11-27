@@ -1,7 +1,7 @@
 import { createComponentImplementation as define } from "@a2ui/react"
 import { DynamicStringSchema, DynamicBooleanSchema } from "@a2ui/web_core/v1_0"
 import { useId } from "react"
-import { z } from "zod"
+import { z } from "zod/v3"
 import {
   Accordion,
   AccordionSummary,
