@@ -68,3 +68,15 @@ updates:
         update-types:
           - "minor"
           - "patch"
+
+  # Bootstrap npm has its own manifest; Runtime Updates verifies and renders it.
+  - package-ecosystem: npm
+    directory: /.github/runtime-tools
+    cooldown:
+      default-days: 7
+    schedule:
+      interval: weekly
+      day: monday
+      time: "09:00"
+      timezone: Asia/Tokyo
+    open-pull-requests-limit: 3
