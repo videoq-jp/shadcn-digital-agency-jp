@@ -1,0 +1,612 @@
+[
+  {
+    "version": "1.0",
+    "createSurface": {
+      "surfaceId": "generated",
+      "catalogId": "https://github.com/videoq-jp/shadcn-digital-agency-jp/catalogs/a2ui/v1"
+    }
+  },
+  {
+    "version": "1.0",
+    "updateDataModel": {
+      "surfaceId": "generated",
+      "path": "/",
+      "value": {
+        "heading": "全47部品 デモ画面",
+        "input": "サンプル入力",
+        "textarea": "サンプルテキスト",
+        "checkbox": false,
+        "select": "opt1",
+        "radio": "optA",
+        "switch": false,
+        "calendar": "2026-12-15",
+        "datePicker": "2026-12-15",
+        "sepDatePicker": "2026-12-15",
+        "files": "[]",
+        "accordion": false,
+        "disclosure": false,
+        "dialog": false,
+        "drawer": false,
+        "tabs": "tab1",
+        "notifVisible": false,
+        "progress": 30,
+        "page": 1,
+        "step": 0,
+        "carousel": 0,
+        "search": "",
+        "hamburger": false,
+        "hMenu": "m1",
+        "menuList": "i1",
+        "menuListBox": "a",
+        "lang": "ja"
+      }
+    }
+  },
+  {
+    "version": "1.0",
+    "updateComponents": {
+      "surfaceId": "generated",
+      "components": [
+        {
+          "id": "root",
+          "component": "Column",
+          "children": [
+            "heading",
+            "textBody",
+            "input",
+            "textarea",
+            "checkbox",
+            "button",
+            "divider",
+            "table",
+            "descriptionList",
+            "select",
+            "blockquote",
+            "errorText",
+            "supportText",
+            "statusBadge",
+            "chipLabel",
+            "requirementBadge",
+            "labelComp",
+            "legend",
+            "formControlLabel",
+            "link",
+            "utilityLink",
+            "listComp",
+            "image",
+            "emergencyBanner",
+            "notificationBanner",
+            "progressIndicator",
+            "calendar",
+            "datePicker",
+            "separatedDatePicker",
+            "radioGroup",
+            "switchComp",
+            "searchBox",
+            "hamburgerMenuButton",
+            "fileUpload",
+            "accordion",
+            "disclosure",
+            "dialog",
+            "drawer",
+            "tabs",
+            "breadcrumbs",
+            "horizontalMenu",
+            "menuList",
+            "menuListBox",
+            "languageSelector",
+            "pageNavigation",
+            "resourceList",
+            "stepNavigation",
+            "carousel"
+          ]
+        },
+        {
+          "id": "heading",
+          "component": "Heading",
+          "text": "全47部品 デモ画面",
+          "level": "h2"
+        },
+        {
+          "id": "textBody",
+          "component": "Text",
+          "text": "以下は各コンポーネントの最小実装例です。"
+        },
+        {
+          "id": "input",
+          "component": "Input",
+          "label": "テキスト入力",
+          "value": {
+            "@path": "/input"
+          }
+        },
+        {
+          "id": "textarea",
+          "component": "Textarea",
+          "label": "テキストエリア",
+          "value": {
+            "@path": "/textarea"
+          }
+        },
+        {
+          "id": "checkbox",
+          "component": "Checkbox",
+          "label": "チェックボックス",
+          "value": {
+            "@path": "/checkbox"
+          }
+        },
+        {
+          "id": "button",
+          "component": "Button",
+          "label": "確認",
+          "action": {
+            "event": {
+              "name": "confirm",
+              "context": {
+                "input": {
+                  "@path": "/input"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "divider",
+          "component": "Divider"
+        },
+        {
+          "id": "table",
+          "component": "Table",
+          "caption": "サンプルテーブル",
+          "columns": ["項目1", "項目2"],
+          "rows": [
+            ["A", "1"],
+            ["B", "2"]
+          ]
+        },
+        {
+          "id": "descriptionList",
+          "component": "DescriptionList",
+          "items": [
+            {
+              "term": "用語1",
+              "description": "説明1"
+            },
+            {
+              "term": "用語2",
+              "description": "説明2"
+            }
+          ]
+        },
+        {
+          "id": "select",
+          "component": "Select",
+          "label": "選択",
+          "value": {
+            "@path": "/select"
+          },
+          "options": [
+            {
+              "label": "オプション1",
+              "value": "opt1"
+            },
+            {
+              "label": "オプション2",
+              "value": "opt2"
+            }
+          ]
+        },
+        {
+          "id": "blockquote",
+          "component": "Blockquote",
+          "text": "引用テキスト"
+        },
+        {
+          "id": "errorText",
+          "component": "ErrorText",
+          "text": "エラーメッセージ"
+        },
+        {
+          "id": "supportText",
+          "component": "SupportText",
+          "text": "サポート情報"
+        },
+        {
+          "id": "statusBadge",
+          "component": "StatusBadge",
+          "text": "ステータス"
+        },
+        {
+          "id": "chipLabel",
+          "component": "ChipLabel",
+          "text": "チップ"
+        },
+        {
+          "id": "requirementBadge",
+          "component": "RequirementBadge",
+          "text": "必須項目",
+          "optional": false
+        },
+        {
+          "id": "labelComp",
+          "component": "Label",
+          "text": "ラベルテキスト"
+        },
+        {
+          "id": "legend",
+          "component": "Legend",
+          "text": "凡例テキスト",
+          "children": []
+        },
+        {
+          "id": "formControlLabel",
+          "component": "FormControlLabel",
+          "label": "フォームラベル",
+          "children": []
+        },
+        {
+          "id": "link",
+          "component": "Link",
+          "text": "内部リンク",
+          "href": "/a2ui"
+        },
+        {
+          "id": "utilityLink",
+          "component": "UtilityLink",
+          "text": "外部リンク",
+          "href": "https://example.com",
+          "newTab": true
+        },
+        {
+          "id": "listComp",
+          "component": "List",
+          "items": ["項目A", "項目B"],
+          "numbered": false
+        },
+        {
+          "id": "image",
+          "component": "Image",
+          "src": "https://placehold.co/800x450/png",
+          "alt": "プレースホルダー画像",
+          "caption": "画像キャプション"
+        },
+        {
+          "id": "emergencyBanner",
+          "component": "EmergencyBanner",
+          "title": "緊急通知",
+          "text": "緊急情報です",
+          "children": []
+        },
+        {
+          "id": "notificationBanner",
+          "component": "NotificationBanner",
+          "title": "お知らせ",
+          "text": "通知テキスト",
+          "type": "info1",
+          "visible": {
+            "@path": "/notifVisible"
+          },
+          "children": []
+        },
+        {
+          "id": "progressIndicator",
+          "component": "ProgressIndicator",
+          "label": "進捗",
+          "value": 30
+        },
+        {
+          "id": "calendar",
+          "component": "Calendar",
+          "label": "カレンダー",
+          "value": {
+            "@path": "/calendar"
+          },
+          "disabled": false
+        },
+        {
+          "id": "datePicker",
+          "component": "DatePicker",
+          "label": "日付選択",
+          "value": {
+            "@path": "/datePicker"
+          },
+          "disabled": false
+        },
+        {
+          "id": "separatedDatePicker",
+          "component": "SeparatedDatePicker",
+          "label": "分割日付選択",
+          "value": {
+            "@path": "/sepDatePicker"
+          },
+          "disabled": false
+        },
+        {
+          "id": "radioGroup",
+          "component": "RadioGroup",
+          "label": "ラジオ選択",
+          "value": {
+            "@path": "/radio"
+          },
+          "options": [
+            {
+              "label": "A",
+              "value": "optA"
+            },
+            {
+              "label": "B",
+              "value": "optB"
+            }
+          ]
+        },
+        {
+          "id": "switchComp",
+          "component": "Switch",
+          "label": "スイッチ",
+          "value": {
+            "@path": "/switch"
+          }
+        },
+        {
+          "id": "searchBox",
+          "component": "SearchBox",
+          "label": "検索",
+          "value": {
+            "@path": "/search"
+          },
+          "action": {
+            "event": {
+              "name": "search",
+              "context": {
+                "query": {
+                  "@path": "/search"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "hamburgerMenuButton",
+          "component": "HamburgerMenuButton",
+          "label": "メニュー",
+          "value": {
+            "@path": "/hamburger"
+          },
+          "disabled": false,
+          "children": []
+        },
+        {
+          "id": "fileUpload",
+          "component": "FileUpload",
+          "label": "ファイルアップロード",
+          "value": {
+            "@path": "/files"
+          },
+          "disabled": false,
+          "accept": "*/*",
+          "multiple": true
+        },
+        {
+          "id": "accordion",
+          "component": "Accordion",
+          "title": "アコーディオン",
+          "value": {
+            "@path": "/accordion"
+          },
+          "children": []
+        },
+        {
+          "id": "disclosure",
+          "component": "Disclosure",
+          "title": "ディスクロージャ",
+          "value": {
+            "@path": "/disclosure"
+          },
+          "children": []
+        },
+        {
+          "id": "dialog",
+          "component": "Dialog",
+          "title": "ダイアログ",
+          "value": {
+            "@path": "/dialog"
+          },
+          "children": []
+        },
+        {
+          "id": "drawer",
+          "component": "Drawer",
+          "title": "ドロワー",
+          "value": {
+            "@path": "/drawer"
+          },
+          "children": [],
+          "side": "right"
+        },
+        {
+          "id": "tabs",
+          "component": "Tabs",
+          "label": "タブ",
+          "value": {
+            "@path": "/tabs"
+          },
+          "tabs": [
+            {
+              "label": "タブ1",
+              "value": "tab1",
+              "children": ["tab1Text"]
+            },
+            {
+              "label": "タブ2",
+              "value": "tab2",
+              "children": ["tab2Text"]
+            }
+          ]
+        },
+        {
+          "id": "tab1Text",
+          "component": "Text",
+          "text": "タブ1の内容"
+        },
+        {
+          "id": "tab2Text",
+          "component": "Text",
+          "text": "タブ2の内容"
+        },
+        {
+          "id": "breadcrumbs",
+          "component": "Breadcrumbs",
+          "label": "パンくずリスト",
+          "items": [
+            {
+              "label": "ホーム",
+              "href": "/"
+            },
+            {
+              "label": "デモ",
+              "href": "/a2ui"
+            }
+          ]
+        },
+        {
+          "id": "horizontalMenu",
+          "component": "HorizontalMenu",
+          "label": "水平メニュー",
+          "value": {
+            "@path": "/hMenu"
+          },
+          "options": [
+            {
+              "label": "メニュー1",
+              "value": "m1"
+            },
+            {
+              "label": "メニュー2",
+              "value": "m2"
+            }
+          ]
+        },
+        {
+          "id": "menuList",
+          "component": "MenuList",
+          "label": "メニューリスト",
+          "value": {
+            "@path": "/menuList"
+          },
+          "options": [
+            {
+              "label": "項目1",
+              "value": "i1"
+            },
+            {
+              "label": "項目2",
+              "value": "i2"
+            }
+          ]
+        },
+        {
+          "id": "menuListBox",
+          "component": "MenuListBox",
+          "label": "リストボックス",
+          "value": {
+            "@path": "/menuListBox"
+          },
+          "options": [
+            {
+              "label": "選択肢A",
+              "value": "a"
+            },
+            {
+              "label": "選択肢B",
+              "value": "b"
+            }
+          ]
+        },
+        {
+          "id": "languageSelector",
+          "component": "LanguageSelector",
+          "label": "言語選択",
+          "value": {
+            "@path": "/lang"
+          },
+          "options": [
+            {
+              "label": "日本語",
+              "value": "ja"
+            },
+            {
+              "label": "英語",
+              "value": "en"
+            }
+          ]
+        },
+        {
+          "id": "pageNavigation",
+          "component": "PageNavigation",
+          "label": "ページ",
+          "value": {
+            "@path": "/page"
+          },
+          "total": 10
+        },
+        {
+          "id": "resourceList",
+          "component": "ResourceList",
+          "items": [
+            {
+              "title": "リソース1",
+              "description": "説明1",
+              "href": "/res1"
+            },
+            {
+              "title": "リソース2",
+              "description": "説明2",
+              "href": "/res2"
+            }
+          ],
+          "variant": "list"
+        },
+        {
+          "id": "stepNavigation",
+          "component": "StepNavigation",
+          "label": "ステップ",
+          "value": {
+            "@path": "/step"
+          },
+          "steps": [
+            {
+              "title": "ステップ1",
+              "description": "開始"
+            },
+            {
+              "title": "ステップ2",
+              "description": "次へ"
+            }
+          ],
+          "orientation": "horizontal"
+        },
+        {
+          "id": "carousel",
+          "component": "Carousel",
+          "label": "カルーセル",
+          "value": {
+            "@path": "/carousel"
+          },
+          "slides": [
+            {
+              "label": "スライド1",
+              "src": "https://placehold.co/800x450/png",
+              "alt": "スライド1"
+            },
+            {
+              "label": "スライド2",
+              "src": "https://placehold.co/800x450/png",
+              "alt": "スライド2"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

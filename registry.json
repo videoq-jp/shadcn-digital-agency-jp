@@ -5,6 +5,152 @@
   "items": [
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "a2ui",
+      "type": "registry:block",
+      "title": "A2UI (Unofficial)",
+      "description": "A2UI v1.0 catalog and React renderer adapter using existing Digital Agency inspired components. Not an official デジタル庁 product.",
+      "dependencies": [
+        "@a2ui/react@0.16.1",
+        "@a2ui/web_core@0.16.1",
+        "zod@4.6.7",
+        "@internationalized/date@^3.12.4"
+      ],
+      "registryDependencies": [
+        "videoq-jp/shadcn-digital-agency-jp/theme",
+        "videoq-jp/shadcn-digital-agency-jp/digital-agency-cn",
+        "videoq-jp/shadcn-digital-agency-jp/accordion",
+        "videoq-jp/shadcn-digital-agency-jp/blockquote",
+        "videoq-jp/shadcn-digital-agency-jp/breadcrumbs",
+        "videoq-jp/shadcn-digital-agency-jp/button",
+        "videoq-jp/shadcn-digital-agency-jp/calendar",
+        "videoq-jp/shadcn-digital-agency-jp/carousel",
+        "videoq-jp/shadcn-digital-agency-jp/checkbox",
+        "videoq-jp/shadcn-digital-agency-jp/chip-label",
+        "videoq-jp/shadcn-digital-agency-jp/date-picker",
+        "videoq-jp/shadcn-digital-agency-jp/description-list",
+        "videoq-jp/shadcn-digital-agency-jp/dialog",
+        "videoq-jp/shadcn-digital-agency-jp/disclosure",
+        "videoq-jp/shadcn-digital-agency-jp/divider",
+        "videoq-jp/shadcn-digital-agency-jp/drawer",
+        "videoq-jp/shadcn-digital-agency-jp/emergency-banner",
+        "videoq-jp/shadcn-digital-agency-jp/error-text",
+        "videoq-jp/shadcn-digital-agency-jp/file-upload",
+        "videoq-jp/shadcn-digital-agency-jp/form-control-label",
+        "videoq-jp/shadcn-digital-agency-jp/hamburger-menu-button",
+        "videoq-jp/shadcn-digital-agency-jp/heading",
+        "videoq-jp/shadcn-digital-agency-jp/horizontal-menu",
+        "videoq-jp/shadcn-digital-agency-jp/image",
+        "videoq-jp/shadcn-digital-agency-jp/input",
+        "videoq-jp/shadcn-digital-agency-jp/label",
+        "videoq-jp/shadcn-digital-agency-jp/language-selector",
+        "videoq-jp/shadcn-digital-agency-jp/legend",
+        "videoq-jp/shadcn-digital-agency-jp/link",
+        "videoq-jp/shadcn-digital-agency-jp/list",
+        "videoq-jp/shadcn-digital-agency-jp/menu-list",
+        "videoq-jp/shadcn-digital-agency-jp/menu-list-box",
+        "videoq-jp/shadcn-digital-agency-jp/notification-banner",
+        "videoq-jp/shadcn-digital-agency-jp/page-navigation",
+        "videoq-jp/shadcn-digital-agency-jp/progress-indicator",
+        "videoq-jp/shadcn-digital-agency-jp/radio-group",
+        "videoq-jp/shadcn-digital-agency-jp/requirement-badge",
+        "videoq-jp/shadcn-digital-agency-jp/resource-list",
+        "videoq-jp/shadcn-digital-agency-jp/search-box",
+        "videoq-jp/shadcn-digital-agency-jp/select",
+        "videoq-jp/shadcn-digital-agency-jp/separated-date-picker",
+        "videoq-jp/shadcn-digital-agency-jp/status-badge",
+        "videoq-jp/shadcn-digital-agency-jp/step-navigation",
+        "videoq-jp/shadcn-digital-agency-jp/support-text",
+        "videoq-jp/shadcn-digital-agency-jp/switch",
+        "videoq-jp/shadcn-digital-agency-jp/table",
+        "videoq-jp/shadcn-digital-agency-jp/tabs",
+        "videoq-jp/shadcn-digital-agency-jp/textarea",
+        "videoq-jp/shadcn-digital-agency-jp/utility-link"
+      ],
+      "files": [
+        {
+          "path": "src/lib/a2ui/catalog.tsx",
+          "type": "registry:lib",
+          "target": "@lib/a2ui/catalog.tsx"
+        },
+        {
+          "path": "src/lib/a2ui/data-components.tsx",
+          "type": "registry:lib",
+          "target": "@lib/a2ui/data-components.tsx"
+        },
+        {
+          "path": "src/lib/a2ui/showcase.ts",
+          "type": "registry:lib",
+          "target": "@lib/a2ui/showcase.ts"
+        },
+        {
+          "path": "src/lib/a2ui/navigation-components.tsx",
+          "type": "registry:lib",
+          "target": "@lib/a2ui/navigation-components.tsx"
+        },
+        {
+          "path": "src/lib/a2ui/container-components.tsx",
+          "type": "registry:lib",
+          "target": "@lib/a2ui/container-components.tsx"
+        },
+        {
+          "path": "src/lib/a2ui/form-components.tsx",
+          "type": "registry:lib",
+          "target": "@lib/a2ui/form-components.tsx"
+        },
+        {
+          "path": "src/lib/a2ui/date-components.tsx",
+          "type": "registry:lib",
+          "target": "@lib/a2ui/date-components.tsx"
+        },
+        {
+          "path": "src/lib/a2ui/content-components.tsx",
+          "type": "registry:lib",
+          "target": "@lib/a2ui/content-components.tsx"
+        },
+        {
+          "path": "src/lib/a2ui/shared.tsx",
+          "type": "registry:lib",
+          "target": "@lib/a2ui/shared.tsx"
+        },
+        {
+          "path": "src/lib/a2ui/validation.ts",
+          "type": "registry:lib",
+          "target": "@lib/a2ui/validation.ts"
+        },
+        {
+          "path": "src/lib/a2ui/catalog.json",
+          "type": "registry:lib",
+          "target": "@lib/a2ui/catalog.json"
+        },
+        {
+          "path": "src/lib/a2ui/session.ts",
+          "type": "registry:lib",
+          "target": "@lib/a2ui/session.ts"
+        },
+        {
+          "path": "src/lib/a2ui/sample.ts",
+          "type": "registry:lib",
+          "target": "@lib/a2ui/sample.ts"
+        },
+        {
+          "path": "src/components/a2ui/digital-agency-surface.tsx",
+          "type": "registry:component",
+          "target": "@components/a2ui/digital-agency-surface.tsx"
+        },
+        {
+          "path": "THIRD_PARTY_LICENSES.md",
+          "type": "registry:file",
+          "target": "~/THIRD_PARTY_LICENSES.md"
+        },
+        {
+          "path": "scripts/prepare-a2ui-zod.cjs",
+          "type": "registry:file",
+          "target": "~/scripts/prepare-a2ui-zod.cjs"
+        }
+      ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "accordion",
       "type": "registry:ui",
       "title": "Accordion (Unofficial)",

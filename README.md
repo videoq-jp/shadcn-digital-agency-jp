@@ -221,6 +221,21 @@ minor、1.0 以降では major になります。リリース操作や PC の常
 npm run demo   # http://127.0.0.1:5173/
 ```
 
+### A2UI
+
+既存UI部品47種類すべてをA2UI v1.0から組み立てる、任意追加のカタログとReactアダプターを用意しています。Calendar・日付入力・Tabs・Dialogなどの操作と値の更新に対応し、公開デモの「全47部品のショーケース」で確認できます。
+`npm run demo` の起動後、`http://127.0.0.1:5173/a2ui` で日本語のPlaygroundを試せます。
+ダッシュボードやフォームのサンプル、会話での画面更新、JSON編集・書き出し、操作イベントの確認ができます。
+このPCのCodexログインで実際のLLM生成を試す場合は、`npm run demo:llm`で起動してください。
+依頼から画面を生成し、ボタン操作にLLMが応答します。
+
+```bash
+npx shadcn@latest add videoq-jp/shadcn-digital-agency-jp/a2ui
+```
+
+配布項目が公開された後に利用できます。対応部品・組み込み方・AIサーバーへの接続方法は
+[A2UI integration](docs/a2ui.md) を参照してください。
+
 ---
 
 ## ライセンス / License
@@ -232,3 +247,5 @@ npm run demo   # http://127.0.0.1:5173/
 （Copyright (c) 2025 デジタル庁, MIT License）の著作権・ライセンス表示を
 [`NOTICE`](./NOTICE) と [`THIRD_PARTY_LICENSES.md`](./THIRD_PARTY_LICENSES.md) に保持しています。
 registry 経由でコピーされる各コンポーネントには attribution header を付与しています。
+
+公開デモは [Cloudflare Workers](https://shadcn-digital-agency-jp.yukiharada1228.workers.dev/) で配信します。[A2UI Playground](https://shadcn-digital-agency-jp.yukiharada1228.workers.dev/a2ui) はWorkers AIで生成します。設定・公開手順は [Workers運用](docs/cloudflare-workers.md) を参照してください。

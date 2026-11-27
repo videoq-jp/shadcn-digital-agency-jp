@@ -10,3 +10,8 @@ test-results/
 .claude/
 __pycache__/
 runtime-plan.json
+
+.wrangler/
+.dev.vars*
+.env*
+!.env.example

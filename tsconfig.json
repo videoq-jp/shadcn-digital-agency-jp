@@ -25,5 +25,5 @@
     }
   },
   "include": ["src", "tests", "scripts"],
-  "exclude": ["node_modules", "upstream"]
+  "exclude": ["node_modules", "upstream", "worker", "tests/worker"]
 }

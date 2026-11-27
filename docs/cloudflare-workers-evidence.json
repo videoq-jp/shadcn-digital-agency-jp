@@ -1,0 +1,39 @@
+{
+  "verifiedOn": "2026-11-27",
+  "accountId": "12daec56fdba43f677f2766ee26a5a39",
+  "worker": "shadcn-digital-agency-jp",
+  "workerVersionId": "59c14d77-3d61-4c5e-8a57-20581d0ae595",
+  "origin": "https://shadcn-digital-agency-jp.yukiharada1228.workers.dev",
+  "aiModel": "@cf/openai/gpt-oss-120b",
+  "verification": {
+    "componentsShowcaseRendered": true,
+    "workersAiFormGenerated": true,
+    "boundInputUsedByButtonAction": true,
+    "followUpHeadingChangedWithInputPreserved": true,
+    "a2uiTrailingSlashRendered": true,
+    "unitAndAccessibilityTestFilesPassed": 108,
+    "unitAndAccessibilityTestsPassed": 703,
+    "typecheck": "passed",
+    "lint": "passed",
+    "format": "passed",
+    "build": "passed",
+    "catalogCheck": "passed",
+    "registryCheck": "passed",
+    "licenseCheck": "passed",
+    "pagesProjectDeleted": true,
+    "oldPagesDeploymentsDeletedBeforeProjectRemoval": 232,
+    "githubHomepageUrl": "https://shadcn-digital-agency-jp.yukiharada1228.workers.dev/",
+    "largeFormGeneration": {
+      "components": 49,
+      "attempts": 1,
+      "elapsedMs": 27740
+    },
+    "generationErrorClassificationTests": "token limit, incomplete stream, invalid screen, provider failure, timeout"
+  },
+  "deploymentMethod": "Wrangler CLI; automatic Workers Git deployment is not configured",
+  "generationLimits": {
+    "maxOutputTokens": 16384,
+    "timeoutMs": 180000
+  },
+  "generationOutputFormat": "direct A2UI JSON array; syntax repair only after normal model finish, followed by catalog validation"
+}

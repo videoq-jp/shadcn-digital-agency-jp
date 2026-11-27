@@ -1,0 +1,55 @@
+{
+  "tool": "rea-agents@6.10.1",
+  "runtime": "node@26.13.0 (temporary npx environment)",
+  "reference": "https://github.com/CopilotKit/CopilotKit/tree/dd27eb85e1e6af881595e74871bb342d40cad3e0/examples/showcases/a2ui-playground",
+  "evidence_id": "ev_555c361278c204f726ffd6a09888e3c75b780815204c05fc80541ca2d562e730",
+  "artifact_sha256": "e1cfb7501c8d3d043b749148d19455af8c162bae8be8ba84b544b8154f233e89",
+  "statistics": {
+    "relevant_files": 280,
+    "nested_asar_containers": 0,
+    "text_bytes_read": 3270941,
+    "invalid_utf8_files": 0,
+    "parsed_javascript_files": 264,
+    "skipped_javascript_files": 0,
+    "visited_ast_nodes": 203089,
+    "findings": 3888,
+    "modules": 0,
+    "parse_failures": 0
+  },
+  "source_coverage": {
+    "sources": 264,
+    "unmeasured_sources": 0,
+    "syntax": {
+      "complete": 264,
+      "recovered": 0,
+      "failed": 0,
+      "not-examined": 0
+    },
+    "semantics": {
+      "unknown_sources": 57,
+      "unexamined_sources": 0
+    },
+    "examination": {
+      "complete": 260,
+      "limited": 4,
+      "not-examined": 0
+    },
+    "electron_applicability": {
+      "observed": 0,
+      "unknown": 264
+    }
+  },
+  "limitations": [
+    "Static source analysis does not prove deployed runtime equivalence.",
+    "Semantic retention was capped at 12000 nodes, 1000 per file; semantic graph coverage is partial.",
+    "Behavioral findings were separately checked against source and the live website with ego-browser."
+  ],
+  "investigated_sources": [
+    "src/components/playground/composer.tsx",
+    "src/components/playground/json-editor.tsx",
+    "src/components/playground/workbench.tsx",
+    "src/components/playground/ask-model.tsx",
+    "src/components/playground/json-starters.ts",
+    "src/lib/run-store.ts"
+  ]
+}

@@ -7,6 +7,8 @@ export default tseslint.config(
   {
     ignores: [
       "node_modules",
+      "worker/env.d.ts",
+      ".wrangler",
       ".claude",
       "upstream",
       "dist",
@@ -21,7 +23,7 @@ export default tseslint.config(
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
-    files: [".github/scripts/**/*.cjs"],
+    files: [".github/scripts/**/*.cjs", "scripts/**/*.cjs"],
     languageOptions: {
       sourceType: "commonjs",
       globals: globals.node,

@@ -115,7 +115,7 @@ function makePlan({
       : []),
     "### 変更内容\n\n" + entries.join("\n"),
     ...(manual ? ["### 追加の変更説明\n\n" + manual] : []),
-    `[全変更](https://github.com/${REPOSITORY}/compare/${previousTag}...${tag}) · [互換性](https://github.com/${REPOSITORY}/blob/${tag}/docs/compatibility.md) · [公開デモ](https://shadcn-digital-agency-jp.pages.dev/)`,
+    `[全変更](https://github.com/${REPOSITORY}/compare/${previousTag}...${tag}) · [互換性](https://github.com/${REPOSITORY}/blob/${tag}/docs/compatibility.md) · [公開デモ](https://shadcn-digital-agency-jp.yukiharada1228.workers.dev/)`,
   ].join("\n\n")
   pkg.version = change.version
   lock.version = change.version
