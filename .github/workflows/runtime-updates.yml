@@ -67,7 +67,7 @@ jobs:
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version-file: .node-version
-      - name: Discover official interpreter and package-manager releases
+      - name: Discover interpreters and resolve Dependabot tool pins
         id: plan
         env:
           GITHUB_TOKEN: ${{ github.token }}
